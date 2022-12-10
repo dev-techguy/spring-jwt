@@ -37,12 +37,12 @@ public class UserResource {
 
     @PostMapping("/role/addtouser")
     public ResponseEntity<?> addRoleToUser(@RequestBody RoleToUserForm roleToUserForm) {
-        userService.addRoleToUser(roleToUserForm.getUsername(), roleToUserForm.getRoleName())
+        userService.addRoleToUser(roleToUserForm.getUsername(), roleToUserForm.getRoleName());
         return ResponseEntity.ok().build();
     }
 
     @Data
-    static class RoleToUserForm() {
+    static class RoleToUserForm {
         private String username;
         private String roleName;
     }
